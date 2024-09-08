@@ -1,6 +1,6 @@
 ### All Submissions:
 
-* [ ] Have you followed the [Tawfeer Contributing guideline](https://github.com/WooServ/tawfeer-theme/blob/trunk/.github/CONTRIBUTING.md)?
+* [ ] Have you followed the [Tawfeer Contributing guideline](https://github.com/wooserv/tawfeer-theme/blob/trunk/.github/CONTRIBUTING.md)?
 * [ ] Have you checked to ensure there aren't other open [Pull Requests](../../pulls) for the same update/change?
 
 <!-- Mark completed items with an [x] -->

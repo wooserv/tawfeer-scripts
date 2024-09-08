@@ -11,7 +11,7 @@ steps:
   # https://medium.com/@mdsky1986/caching-node-dependencies-when-using-npm-ci-89fe3f46404a
   - run:
       name: Install node dependencies
-      # --legacy-peer-deps flag should be removed once https://github.com/WooServ/tawfeer-plugin/issues/1218 is resolved
+      # --legacy-peer-deps flag should be removed once https://github.com/wooserv/tawfeer-plugin/issues/1218 is resolved
       command: |
         if test -d "node_modules"; then
           echo "package.json and package-lock.json unchanged. Using cache."
