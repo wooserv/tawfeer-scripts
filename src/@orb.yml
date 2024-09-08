@@ -1,0 +1,8 @@
+version: 2.1
+
+description: >
+  Tawfeer shared CI config.
+
+display:
+  home_url: "https://tawfeer.me"
+  source_url: "https://www.github.com/WooServ/tawfeer-scripts"
