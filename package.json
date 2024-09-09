@@ -1,9 +1,9 @@
 {
-	"name": "tawfeer-scripts",
+	"name": "@tawfeer/scripts",
 	"version": "1.0.0",
 	"description": "",
 	"bin": {
-		"tawfeer-scripts": "./bin/tawfeer-scripts.js"
+		"tw-scripts": "./bin/tw-scripts.js"
 	},
 	"author": "",
 	"license": "ISC",

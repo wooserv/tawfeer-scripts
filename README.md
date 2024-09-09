@@ -1,4 +1,4 @@
-# tawfeer-scripts
+# Scripts
 
 Scripts for Tawfeer, heavily inspired by [`react-scripts`](https://github.com/facebook/create-react-app/blob/main/packages/react-scripts).
 
@@ -6,7 +6,7 @@ Scripts for Tawfeer, heavily inspired by [`react-scripts`](https://github.com/fa
 
 ## Available scripts
 
-Repos consuming the `tawfeer-scripts` package can use the following NPM scripts. Prefix each at the command line with `npm run` (or [`bun run`](https://bun.sh/)) to execute.
+Repos consuming the `@tawfeer/scripts` package can use the following NPM scripts. Prefix each at the command line with `npm run` (or [`bun run`](https://bun.sh/)) to execute.
 
 ### start
 
@@ -65,7 +65,7 @@ Will validate TypeScript code in the project. This requires a `tsconfig.json` fi
 
 ```json
 {
-	"extends": "tawfeer-scripts/config/tsconfig.json",
+	"extends": "@tawfeer/scripts/config/tsconfig.json",
 	"compilerOptions": {
 		"rootDir": "src",
 		"jsx": "react-jsx"
@@ -142,7 +142,7 @@ This package exposes a couple of configuration files.
 The `webpack.config.js` file should use this package's config-extending function:
 
 ```js
-const getBaseWebpackConfig = require("tawfeer-scripts/config/getWebpackConfig");
+const getBaseWebpackConfig = require("@tawfeer/scripts/config/getWebpackConfig");
 
 const webpackConfig = getBaseWebpackConfig(
 	{
@@ -163,7 +163,7 @@ A basic `babel.config.js`:
 module.exports = api => {
 	api.cache( true );
 	return {
-		extends: 'tawfeer-scripts/config/babel.config.js',
+		extends: '@tawfeer/scripts/config/babel.config.js',
 	};
 };
 ```
@@ -178,7 +178,7 @@ Because of ESLint's [issue](https://github.com/eslint/eslint/issues/3458) with r
 require( '@rushstack/eslint-patch/modern-module-resolution' );
 
 module.exports = {
-	extends: [ './node_modules/tawfeer-scripts/config/eslintrc.js' ],
+	extends: [ './node_modules/@tawfeer/scripts/config/eslintrc.js' ],
 	// Additional options…
 };
 ```
@@ -190,7 +190,7 @@ module.exports = {
 To configure Prettier rules, extend this repo's config by creating a `.prettierrc.js` file like so:
 
 ```js
-const baseConfig = require( './node_modules/tawfeer-scripts/config/prettier.config.js' );
+const baseConfig = require( './node_modules/@tawfeer/scripts/config/prettier.config.js' );
 
 module.exports = {
 	...baseConfig,
@@ -212,14 +212,14 @@ vendor
 `@wordpress/scripts` uses [Stylelint](https://stylelint.io/) under the hood for SCSS linting and formatting.
 
 ```shell
-tawfeer-scripts wp-scripts lint-style '**/*.scss' --customSyntax postcss-scss
+tw-scripts wp-scripts lint-style '**/*.scss' --customSyntax postcss-scss
 ```
 
 Extend this repo's config with a `.stylelintrc.js` file like so:
 
 ```js
 module.exports = {
-	extends: [ './node_modules/tawfeer-scripts/config/stylelint.config.js' ],
+	extends: [ './node_modules/@tawfeer/scripts/config/stylelint.config.js' ],
 	// Additional options…
 };
 ```
@@ -260,7 +260,7 @@ Note that before the first time updating you'll need to set the API key for Circ
 
 ### Testing locally
 
-1. Copy the path to this repository (e.g. `pwd | pbcopy`) and "install" it as an npm dependency in the repository on which you wish to test (e.g. `npm i /path/to/tawfeer-scripts`). You should end up with a `"tawfeer-scripts": "file:*"` entry in `package.json` instead of a version number.
+1. Copy the path to this repository (e.g. `pwd | pbcopy`) and "install" it as an npm dependency in the repository on which you wish to test (e.g. `npm i /path/to/tawfeer-scripts`). You should end up with a `"@tawfeer/scripts": "file:*"` entry in `package.json` instead of a version number.
 2. Trigger a script and observe the results, e.g. `npm run semantic-release -- --dry-run`
 
 ---
@@ -269,4 +269,4 @@ Note that before the first time updating you'll need to set the API key for Circ
 
 ### `@wordpress/*` packages
 
-This project lists [`@wordpress/*` packages](https://github.com/WordPress/gutenberg/tree/trunk/packages) as dependencies in order to provide them to consumers. In a project using `@wordpress/scripts` (e.g. a consumer of `tawfeer-scripts`), the `@wordpress/*` packages are sourced from WP Core, not `node_modules`. The packages should be included in `node_modules`, though, to be available in other environments – notably when running tests. See [Dependency Extraction Webpack Plugin](https://www.npmjs.com/package/@wordpress/dependency-extraction-webpack-plugin) for more information.
+This project lists [`@wordpress/*` packages](https://github.com/WordPress/gutenberg/tree/trunk/packages) as dependencies in order to provide them to consumers. In a project using `@wordpress/scripts` (e.g. a consumer of `@tawfeer/scripts`), the `@wordpress/*` packages are sourced from WP Core, not `node_modules`. The packages should be included in `node_modules`, though, to be available in other environments – notably when running tests. See [Dependency Extraction Webpack Plugin](https://www.npmjs.com/package/@wordpress/dependency-extraction-webpack-plugin) for more information.

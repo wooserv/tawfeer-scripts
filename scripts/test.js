@@ -23,9 +23,9 @@ const JEST_CONFIG = {
 		'^.+\\.(j|t)sx?$': path.resolve( __dirname, 'utils/babelJestTransformer.js' ),
 	},
 	transformIgnorePatterns: [
-		// Ignore all node_modules except for tawfeer-scripts, @wordpress/* packages, and
+		// Ignore all node_modules except for @tawfeer/scripts, @wordpress/* packages, and
 		// some transitive dependencies which distribute ES6 modules.
-		'/node_modules/(?!(tawfeer-scripts|@wordpress|is-plain-obj|memize)/)',
+		'/node_modules/(?!(@tawfeer/scripts|@wordpress|is-plain-obj|memize)/)',
 	],
 	moduleNameMapper: {
 		'\\.(scss|css)$': path.resolve( __dirname, 'utils/babelJestTransformer.js' ),
